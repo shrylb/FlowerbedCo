@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Lora", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --color-dusty-rose: #c9acac;
+  --color-dusty-rose-dark: #b89797;
+  --color-dusty-rose-light: #dac1c1;
+  --color-floral-ivory: #f2f2f2;
+  --color-floral-cream: #faf7f5;
+  --color-floral-charcoal: #231f1d;
+  --color-floral-gold: #c2954a;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  color: #231f1d;
+  background-color: #c9acac;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #231f1d;
+  color: #f2f2f2;
+}
+
+/* Custom button mimicking Figma Explore Shop button */
+.btn-figma-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ede5e3 0%, #dbcfcc 100%);
+  border: 1px solid #786363;
+  box-shadow: 0 4px 10px rgba(50, 35, 35, 0.18), inset 0 1px 2px rgba(255, 255, 255, 0.9), inset 0 -2px 3px rgba(80, 50, 50, 0.15);
+  border-radius: 9999px;
+  color: #231f1d;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-figma-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(50, 35, 35, 0.24), inset 0 1px 2px rgba(255, 255, 255, 1), inset 0 -2px 3px rgba(80, 50, 50, 0.1);
+  background: linear-gradient(180deg, #f5eeec 0%, #e3d7d4 100%);
+}
+
+.btn-figma-pill:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(50, 35, 35, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+/* Secondary delicate pill */
+.btn-subtle-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(40, 30, 30, 0.12);
+  border-radius: 9999px;
+  color: #231f1d;
+  transition: all 0.25s ease;
+}
+
+.btn-subtle-pill:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(40, 30, 30, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Zoom on hover for flower images */
+.flower-hover-zoom {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+.flower-hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Card enlarge on hover */
+.card-hover-enlarge {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+.card-hover-enlarge:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 14px 28px rgba(35, 31, 29, 0.12);
+}
+
+/* Floating animation for subtle petal drift */
+@keyframes petalDrift {
+  0% {
+    transform: translateY(0px) rotate(0deg) translateX(0px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(15px) rotate(8deg) translateX(8px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) translateX(0px);
+    opacity: 0.7;
+  }
+}
+
+.animate-petal {
+  animation: petalDrift 7s ease-in-out infinite;
+}
+
+.animate-petal-slow {
+  animation: petalDrift 11s ease-in-out infinite reverse;
+}
+
+/* Paper-stack section divider shadow */
+.paper-stack-top {
+  box-shadow: 0 -12px 24px -8px rgba(0, 0, 0, 0.07);
+}
+
+.paper-stack-bottom {
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.07);
+}
+
+/* Elegant scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #c9acac;
+}
+::-webkit-scrollbar-thumb {
+  background: #9c7b7b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7a5c5c;
+}
+
+/* Gallery Marquee Scrolling to the Left */
+@keyframes scrollLeftContinuous {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  display: flex;
+  width: max-content;
+  animation: scrollLeftContinuous 34s linear infinite;
+}
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
+

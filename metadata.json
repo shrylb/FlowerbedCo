@@ -1,0 +1,6 @@
+{
+  "name": "Flowerbed Co. - Handcrafted Floral Studio",
+  "description": "Bespoke handcrafted flower arrangements designed to brighten your day, celebrate milestones, and share heartfelt messages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
